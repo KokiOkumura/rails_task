@@ -1,0 +1,34 @@
+version: '3'
+
+# mysql-dataというDBを新しく作成
+volumes:
+  mysql-data: null
+
+services:
+  web:
+    build: .
+    command: "bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/rails_task'
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: mysql:8.0
+    # MYSQL8.0以降の認証プラグインが変更したためこちらを記載しないとエラーになる
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '3306:3306'
+      # volumesで作成したmy-sql-dataにマウントとする　DockerだとDBコンテナが削除されるたびにMYSQLのデータが消えるためローカルとDockerと同期している
+    volumes:
+      - 'mysql-data:/var/lib/mysql'
+    environment:
+      #MYSQLはパスワードの設定を指定しないとエラーになるため設定する
+      MYSQL_ROOT_PASSWORD: password
+      # MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
