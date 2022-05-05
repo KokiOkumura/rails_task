@@ -2,7 +2,8 @@ version: '3'
 
 # mysql-dataというDBを新しく作成
 volumes:
-  mysql-data: null
+  mysql-data:
+
 
 services:
   web:
@@ -15,8 +16,6 @@ services:
     tty: true
     stdin_open: true
     depends_on:
-      - db
-    links:
       - db
 
   db:
