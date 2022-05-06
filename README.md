@@ -21,7 +21,7 @@ cd rails_task
 docker compose run web bash rails db:create
 ```
 
-4. データベースの作成とmigrationファイルの内容をDBに反映する
+4. migrationファイルの内容をDBに反映する
 
 ```
 docker compose run web bash rails db:migrate
