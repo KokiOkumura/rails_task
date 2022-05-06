@@ -31,4 +31,5 @@ services:
     environment:
       #MYSQLはパスワードの設定を指定しないとエラーになるため設定する
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: dbname
       # MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
