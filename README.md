@@ -15,16 +15,16 @@ git clone https://github.com/KokiOkumura/rails_task.git
 cd rails_task
 ```
 
-3. webコンテナの立ち上げを行う
+3. webコンテナの立ち上げを
 
 ```
-docker compose run web bash
+docker compose run web bash rails db:create
 ```
 
 4. データベースの作成とmigrationファイルの内容をDBに反映する
 
 ```
-rails db:create
+
 ```
 
 ```
