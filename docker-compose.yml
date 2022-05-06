@@ -1,8 +1,8 @@
 version: '3'
 
 # mysql-dataというDBを新しく作成する。ya
-volumes:
-  mysql-data:
+# volumes:
+#   mysql-data:
 
 
 services:
@@ -26,7 +26,8 @@ services:
       - '3306:3306'
       # volumesで作成したmy-sql-dataにマウントとする　DockerだとDBコンテナが削除されるたびにMYSQLのデータが消えるためローカルとDockerと同期している
     volumes:
-      - 'mysql-data:/var/lib/mysql'
+      # - 'mysql-data:/var/lib/mysql'
+      - .:/var/lib/mysql
     environment:
       #MYSQLはパスワードの設定を指定しないとエラーになるため設定する
       MYSQL_ROOT_PASSWORD: password
