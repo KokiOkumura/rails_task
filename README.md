@@ -1,24 +1,61 @@
-# README
+# DockerでRails6系とMySQL8での開発環境
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Requirement
 
-Things you may want to cover:
+- Docker version 20.10.14
+- Ruby on Rails 6.0
+- MySQL 8.0
+- Ruby 2.5
 
-* Ruby version
+# Usage
 
-* System dependencies
+1. git cloneでrails_taskリポジトリをローカルにコピーする
 
-* Configuration
+```
+git clone <https://github.com/KokiOkumura/rails_task.git>
 
-* Database creation
+```
 
-* Database initialization
+1. コピーしたrails_taskディレクトリに移動する
 
-* How to run the test suite
+```
+cd rails_task
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
+1. webコンテナの立ち上げを行う
 
-* ...
+```
+docker compose run web bash
+
+```
+
+1. データベースの作成とmigrationファイルの内容をDBに反映する
+
+```
+rails db:create
+
+```
+
+```
+rails db:migrate
+
+```
+
+1. docker-compose upコマンドでコンテナを立てて、railsサーバーが起動していることを確認
+
+```
+docker-compose up
+
+```
+
+1. ブラウザでlocalhost:3000を立ち上げてrailsサーバーが起動していることを確認する。
+[http://localhost:3000/](http://localhost:3000/)
+
+# Note
+
+注意点などがあれば書く
+
+# Author
+
+- KokiOKumura
