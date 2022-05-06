@@ -1,11 +1,5 @@
 # DockerでRails6系とMySQL8での開発環境
 
-# Requirement
-
-- Docker version 20.10.14
-- Ruby on Rails 6.0
-- MySQL 8.0
-- Ruby 2.5
 
 # Usage
 
