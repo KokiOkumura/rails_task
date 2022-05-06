@@ -12,50 +12,37 @@
 1. git cloneでrails_taskリポジトリをローカルにコピーする
 
 ```
-git clone <https://github.com/KokiOkumura/rails_task.git>
-
+git clone https://github.com/KokiOkumura/rails_task.git
 ```
 
-1. コピーしたrails_taskディレクトリに移動する
+2. コピーしたrails_taskディレクトリに移動する
 
 ```
 cd rails_task
-
 ```
 
-1. webコンテナの立ち上げを行う
+3. webコンテナの立ち上げを行う
 
 ```
 docker compose run web bash
-
 ```
 
-1. データベースの作成とmigrationファイルの内容をDBに反映する
+4. データベースの作成とmigrationファイルの内容をDBに反映する
 
 ```
 rails db:create
-
 ```
 
 ```
 rails db:migrate
-
 ```
 
-1. docker-compose upコマンドでコンテナを立てて、railsサーバーが起動していることを確認
+5. docker-compose upコマンドでコンテナを立てて、railsサーバーが起動していることを確認
 
 ```
 docker-compose up
-
 ```
 
-1. ブラウザでlocalhost:3000を立ち上げてrailsサーバーが起動していることを確認する。
+6. ブラウザでlocalhost:3000を立ち上げてrailsサーバーが起動していることを確認する。
 [http://localhost:3000/](http://localhost:3000/)
 
-# Note
-
-注意点などがあれば書く
-
-# Author
-
-- KokiOKumura

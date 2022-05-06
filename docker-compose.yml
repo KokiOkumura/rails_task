@@ -1,6 +1,6 @@
 version: '3'
 
-# mysql-dataというDBを新しく作成する。
+# mysql-dataというDBを新しく作成する。ya
 volumes:
   mysql-data:
 
