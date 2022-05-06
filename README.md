@@ -15,7 +15,7 @@ git clone https://github.com/KokiOkumura/rails_task.git
 cd rails_task
 ```
 
-3. webコンテナの立ち上げを
+3. webコンテナの立ち上げと、データベースの作成を行う。
 
 ```
 docker compose run web bash rails db:create
@@ -24,13 +24,8 @@ docker compose run web bash rails db:create
 4. データベースの作成とmigrationファイルの内容をDBに反映する
 
 ```
-
+docker compose run web bash rails db:migrate
 ```
-
-```
-rails db:migrate
-```
-
 5. docker-compose upコマンドでコンテナを立てて、railsサーバーが起動していることを確認
 
 ```
